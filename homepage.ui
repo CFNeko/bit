@@ -27,7 +27,7 @@
       <enum>QTabWidget::South</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="HOME">
       <attribute name="title">
@@ -103,6 +103,25 @@
         </item>
        </layout>
       </widget>
+      <widget class="QFrame" name="frame_5">
+       <property name="geometry">
+        <rect>
+         <x>30</x>
+         <y>230</y>
+         <width>681</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">frame{url(:/resource111/1.png);}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+      </widget>
      </widget>
      <widget class="QWidget" name="Massage">
       <attribute name="title">
@@ -157,7 +176,7 @@
        <string>My</string>
       </attribute>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
+       <item row="1" column="0">
         <widget class="QGroupBox" name="groupBox">
          <property name="title">
           <string>个人信息修改</string>
@@ -165,7 +184,7 @@
          <property name="alignment">
           <set>Qt::AlignCenter</set>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="2,2,2">
+         <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
            <widget class="QFrame" name="frame_4">
             <property name="frameShape">
@@ -174,52 +193,68 @@
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <widget class="QLabel" name="label_17">
-             <property name="geometry">
-              <rect>
-               <x>60</x>
-               <y>20</y>
-               <width>171</width>
-               <height>17</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>就诊号：１２３４５６７</string>
-             </property>
-            </widget>
-            <widget class="QLabel" name="label_18">
-             <property name="geometry">
-              <rect>
-               <x>6</x>
-               <y>6</y>
-               <width>41</width>
-               <height>41</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string/>
-             </property>
-             <property name="pixmap">
-              <pixmap resource="resources.qrc">:/resource111/logo.jpg</pixmap>
-             </property>
-            </widget>
-            <widget class="QPushButton" name="pushButton_7">
-             <property name="geometry">
-              <rect>
-               <x>350</x>
-               <y>20</y>
-               <width>80</width>
-               <height>31</height>
-              </rect>
-             </property>
-             <property name="text">
-              <string>修改资料</string>
-             </property>
-            </widget>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_17">
+               <property name="text">
+                <string>就诊号：１２３４５６７</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_7">
+               <property name="maximumSize">
+                <size>
+                 <width>224</width>
+                 <height>37</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+background-color: #F0F0F0;
+                        border: 2px solid #C0C0C0;
+                        padding: 5px;
+                        
+</string>
+               </property>
+               <property name="text">
+                <string>修改资料</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_8">
+               <property name="styleSheet">
+                <string notr="true">border-radius: 10px;
+background-color: #F0F0F0;
+                        border: 2px solid #C0C0C0;
+                        padding: 5px;
+                        
+</string>
+               </property>
+               <property name="text">
+                <string>提交</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,10,1,10,1">
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,100,1,100,1">
             <item>
              <spacer name="horizontalSpacer_4">
               <property name="orientation">
@@ -385,13 +420,6 @@
             </item>
            </layout>
           </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_8">
-            <property name="text">
-             <string>提交</string>
-            </property>
-           </widget>
-          </item>
          </layout>
         </widget>
        </item>
@@ -401,8 +429,6 @@
    </item>
   </layout>
  </widget>
- <resources>
-  <include location="resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

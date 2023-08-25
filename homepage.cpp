@@ -13,7 +13,7 @@ HomePage::HomePage(QWidget *parent) :
     ui->Homepge->setStyleSheet(
                                    "QTabWidget::pane{ border:none; }"
                                    "QTabWidget::tab-bar{ alignment:left; }"
-                                   "QTabBar::tab{ background:transparent; color:white; min-width:30ex; min-height:10ex; }"
+                                   "QTabBar::tab{ background:transparent; color:green; min-width:30ex; min-height:10ex; }"
                                    "QTabBar::tab:hover{ background:rgb(255, 255, 255, 100); }"
                                    "QTabBar::tab:selected{ border-color: white; background:white; color:green; }"
                                );
@@ -31,6 +31,27 @@ HomePage::HomePage(QWidget *parent) :
       connect(ui->pushButton_5, &QPushButton::clicked, this, &HomePage::addCustomWidget); // 点击 "Update" 按钮时添加自定义界面
 
       setWindowTitle("患者端主页");
+
+      // 创建水平布局管理器
+      QHBoxLayout *mainlayout = new QHBoxLayout;
+
+      // 创建 QLabel 控件并设置图片
+      QLabel *imageLabel1 = new QLabel;
+      QPixmap pixmap1(":/resource111/1.png"); // 设置图片的路径和文件名
+      imageLabel1->setPixmap(pixmap1);
+      imageLabel1->setScaledContents(true); // 自适应大小
+
+      QLabel *imageLabel2 = new QLabel;
+      QPixmap pixmap2(":/resource111/1.png");
+      imageLabel2->setPixmap(pixmap2);
+      imageLabel2->setScaledContents(true);
+
+      // 将 QLabel 控件添加到布局管理器
+      mainlayout->addWidget(imageLabel1);
+      mainlayout->addWidget(imageLabel2);
+
+      ui->frame_5->setLayout(mainlayout);
+
 
 }
 

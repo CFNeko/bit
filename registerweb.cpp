@@ -63,20 +63,6 @@ RegisterWeb::RegisterWeb(QWidget *parent)
            // 创建登录按钮
            QPushButton *loginButton = new QPushButton("Login");
            QPushButton *registerButton = new QPushButton("Register");
-#include "registerweb.h"
-#include "ui_registerweb.h"
-#include<QPainter>
-#include<QWidget>
-#include <QLabel>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QMessageBox>
-#include <QVBoxLayout>
-#include <QMainWindow>
-#include<QFormLayout>
-#include<QRadioButton>
-#include <QDebug>
-#include <QSqlQuery>
 
 #define Path_to_DB "/home/user/Desktop/registerWeb/Linux"
 
@@ -93,7 +79,7 @@ RegisterWeb::RegisterWeb(QWidget *parent)
 
                         QString str = usernameLineEdit->text();
                         QString password = passwordLineEdit->text();
-                        QString temp = "SELECT * FROM login WHERE username= '" + str + "' and password='" + password + "'";
+                       QString temp = "SELECT * FROM login WHERE username= '" + str + "' and password='" + password + "'";
                         myDB.open();
                         QSqlQuery q;
                         QString data = "";
@@ -101,10 +87,11 @@ RegisterWeb::RegisterWeb(QWidget *parent)
                         while (q.next()) {
                             data += q.value(0).toString() + q.value(1).toString();
                         }
-                        if (data > 0) {
+                        if (data > 0) {                       
+
                             this->hide();
                             homePage->show();
-                        }
+                       }
 
 
                     });
