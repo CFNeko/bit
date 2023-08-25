@@ -12,3 +12,4 @@ navigationDesign::~navigationDesign()
 {
     delete ui;
 }
+

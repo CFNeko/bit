@@ -16,22 +16,28 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    booking.cpp \
     homepage.cpp \
     main.cpp \
     navigationdesign.cpp \
-    registerweb.cpp
+    registerweb.cpp \
+    signup.cpp
 
 HEADERS += \
+    booking.h \
     homepage.h \
     navigationdesign.h \
-    registerweb.h
+    registerweb.h \
+    signup.h
 
 FORMS += \
+    booking.ui \
     homepage.ui \
     listtemplate.ui \
     msgitem.ui \
     navigationdesign.ui \
-    registerweb.ui
+    registerweb.ui \
+    signup.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
