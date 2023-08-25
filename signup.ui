@@ -156,7 +156,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="boxPassword"/>
+         <widget class="QLineEdit" name="boxPassword">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
         </item>
         <item>
          <widget class="QLabel" name="label_5">
@@ -166,7 +170,11 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="boxPassword2"/>
+         <widget class="QLineEdit" name="boxPassword2">
+          <property name="echoMode">
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>

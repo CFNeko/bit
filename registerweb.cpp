@@ -13,7 +13,7 @@
 #include <QDebug>
 #include <QSqlQuery>
 
-#define Path_to_DB "/home/user/Desktop/bit/database.db"
+#define Path_to_DB "/home/user/Qtworks/mainWindow/2/database.db"
 
 RegisterWeb::RegisterWeb(QWidget *parent)
     : QMainWindow(parent)
@@ -104,6 +104,8 @@ RegisterWeb::RegisterWeb(QWidget *parent)
                        }
                         else {
                             //Jenny 请假一个错误widget
+                            passwordLineEdit->setText("");
+                            showMessageBox();
                         }
                          });
            QHBoxLayout* horizontalLayout = new QHBoxLayout; // 创建水平布局
@@ -134,7 +136,7 @@ RegisterWeb::RegisterWeb(QWidget *parent)
            setCentralWidget(centralWidget);
 
            connect(signUp, SIGNAL(signalToMain()), this, SLOT(on_exit_Signal_Received()) );
-              connect(signUp, SIGNAL(signalTologin()), this, SLOT(on_exit_Signal_Received()) );
+           connect(signUp, SIGNAL(signalTologin()), this, SLOT(on_exit_Signal_Received()) );
 }
 
 RegisterWeb::~RegisterWeb()
@@ -187,7 +189,7 @@ void RegisterWeb::showMessageBox()
             {
                 messageBox = new QMessageBox(this);
                 messageBox->setWindowTitle("提示"); // 设置标题文字
-                messageBox->setText("您两次输入的密码不一致，请重试！");
+                messageBox->setText("用户名不存在或者密码错误！");
                 messageBox->setStandardButtons(QMessageBox::Ok);
                 connect(messageBox, &QMessageBox::finished, this, &RegisterWeb::handleMessageBoxFinished);
                 messageBox->show();

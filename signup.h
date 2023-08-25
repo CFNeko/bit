@@ -21,9 +21,11 @@ public:
 private slots:
     void on_pushButton_exit_clicked();
 
-    void on_pushButton_register_clicked();
+
     void handleMessageBoxFinished(int result);
     void showMessageBox();
+    void showFailMessageBox();
+    void handleMessageFailBoxFinished(int result);
 
 private:
     Ui::SignUp *ui;
