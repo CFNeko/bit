@@ -13,7 +13,7 @@
 #include <QDebug>
 #include <QSqlQuery>
 
-#define Path_to_DB "/home/user/Desktop/bit/Linux"
+#define Path_to_DB "/home/user/Desktop/bit/database.db"
 
 RegisterWeb::RegisterWeb(QWidget *parent)
     : QMainWindow(parent)
@@ -89,11 +89,11 @@ RegisterWeb::RegisterWeb(QWidget *parent)
 
                        QString str = usernameLineEdit->text();
                        QString password = passwordLineEdit->text();
-                       QString temp = "SELECT * FROM login WHERE username= '" + str + "' and password='" + password + "'";
-                        myDB.open();
-                        QSqlQuery q;
-                        QString data = "";
-                        q.exec(temp);
+                       QString temp = "SELECT * FROM patient WHERE name= '" + str + "' and password='" + password + "'";
+                       myDB.open();
+                       QSqlQuery q;
+                       QString data = "";
+                       q.exec(temp);
                         while (q.next()) {
                             data += q.value(0).toString() + q.value(1).toString();
                         }
@@ -102,9 +102,10 @@ RegisterWeb::RegisterWeb(QWidget *parent)
                             this->hide();
                             homePage->show();
                        }
-
-
-                    });
+                        else {
+                            //Jenny 请假一个错误widget
+                        }
+                         });
            QHBoxLayout* horizontalLayout = new QHBoxLayout; // 创建水平布局
            horizontalLayout->addWidget(registerButton); // 将按键1添加到水平布局
            horizontalLayout->addWidget(loginButton); // 将按键2添加到水平布局

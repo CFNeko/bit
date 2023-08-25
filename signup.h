@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include<QMessageBox>
+#include <QSqlDatabase>
 
 namespace Ui {
 class SignUp;
@@ -22,11 +23,12 @@ private slots:
 
     void on_pushButton_register_clicked();
     void handleMessageBoxFinished(int result);
-     void showMessageBox();
+    void showMessageBox();
 
 private:
     Ui::SignUp *ui;
-     QMessageBox* messageBox;
+    QMessageBox* messageBox;
+    QSqlDatabase myDBregister;
 signals:
     void signalToMain();
     void signalTologin();

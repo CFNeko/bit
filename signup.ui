@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>653</width>
-    <height>446</height>
+    <height>473</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -115,7 +115,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit"/>
+         <widget class="QLineEdit" name="boxUsername"/>
         </item>
         <item>
          <widget class="QLabel" name="label_7">
@@ -125,7 +125,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QComboBox" name="comboBox">
+         <widget class="QComboBox" name="boxGender">
           <item>
            <property name="text">
             <string>男</string>
@@ -146,7 +146,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_3"/>
+         <widget class="QLineEdit" name="boxID"/>
         </item>
         <item>
          <widget class="QLabel" name="label_4">
@@ -156,7 +156,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_4"/>
+         <widget class="QLineEdit" name="boxPassword"/>
         </item>
         <item>
          <widget class="QLabel" name="label_5">
@@ -166,7 +166,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QLineEdit" name="lineEdit_5"/>
+         <widget class="QLineEdit" name="boxPassword2"/>
         </item>
        </layout>
       </widget>

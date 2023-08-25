@@ -2,6 +2,13 @@
 #include "ui_signup.h"
 #include<QPainter>
 #include<QDebug>
+#include <QDebug>
+#include <QSqlQuery>
+#include<QFileInfo>
+#include <QString>
+
+#define Path_to_DB "/home/user/Desktop/bit/database.db"
+
 
 SignUp::SignUp(QWidget *parent) :
     QWidget(parent),
@@ -20,7 +27,21 @@ SignUp::SignUp(QWidget *parent) :
 
 
     connect(ui->button_exit,&QPushButton::clicked,this,&SignUp::on_pushButton_exit_clicked);
-    connect(ui->pushButton_register,&QPushButton::clicked,this,&SignUp::on_pushButton_register_clicked);
+    connect(ui->pushButton_register,&QPushButton::clicked,
+            [=](){
+       myDBregister = QSqlDatabase::addDatabase("QSQLITE", "Register");
+       QFileInfo checkFile(Path_to_DB);
+       QString username = ui->boxUsername->text();
+       QString gender = ui->boxGender->currentText();
+       QString id = ui->boxID->text();
+       QString password = ui->boxPassword2->text();
+       QString temp = "INSERT INTO patient (name, gender, idcard, password) VALUES('" + username + "', '" + gender + "', '" + id + "', '" + password + "')" ;
+       qDebug() << temp;
+       myDBregister.open();
+       QSqlQuery q;
+       q.exec(temp);
+    });
+
 }
 
 SignUp::~SignUp()
@@ -55,6 +76,7 @@ void SignUp::on_pushButton_register_clicked()
     // emit signalTologin();
 
     //如果密码不正确，弹出提示框，并重新输入
+
      showMessageBox();
 
 }
