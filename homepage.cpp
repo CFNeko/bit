@@ -20,16 +20,16 @@ HomePage::HomePage(QWidget *parent) :
     ui->frame->setStyleSheet(
                 "background-color: rgba(255, 255, 255, 128);"
                 );
-    ui->pushButton->setFixedSize(100,100);
-    ui->pushButton_2->setFixedSize(100,100);
-    ui->pushButton_3->setFixedSize(100,100);
-    ui->pushButton_4->setFixedSize(100,100);
-
+    ui->booking->setFixedSize(100,100);
+    ui->prescription_inquiry->setFixedSize(100,100);
+    ui->medica_record->setFixedSize(100,100);
+    ui->health_evaluate->setFixedSize(100,100);
+    prescription_inquiry = new PrescriptionInquiry;
     QVBoxLayout* layout = new QVBoxLayout(ui->scrollAreaWidgetContents); // 创建垂直布局
        layout->setSpacing(10); // 设置布局的间距
 
-      connect(ui->pushButton_5, &QPushButton::clicked, this, &HomePage::addCustomWidget); // 点击 "Update" 按钮时添加自定义界面
-
+      connect(ui->updatePushbutton, &QPushButton::clicked, this, &HomePage::addCustomWidget); // 点击 "Update" 按钮时添加自定义界面
+       connect(ui->prescription_inquiry, &QPushButton::clicked, this, &HomePage::on_prescription_inquiry_clicked);
       setWindowTitle("患者端主页");
 
       // 创建水平布局管理器
@@ -51,7 +51,8 @@ HomePage::HomePage(QWidget *parent) :
       mainlayout->addWidget(imageLabel2);
 
       ui->frame_5->setLayout(mainlayout);
-
+      //实现从处方查询那个界面，跳回到首页
+       connect(prescription_inquiry, SIGNAL(preToHome()), this, SLOT(on_PreToHome_Received()) );
 
 }
 
@@ -73,6 +74,7 @@ void HomePage::paintEvent(QPaintEvent*)
 
 }
 
+
 void HomePage::addCustomWidget()
 {
     QTextEdit* customWidget = new QTextEdit(ui->scrollAreaWidgetContents); // 创建自定义界面部件
@@ -83,4 +85,20 @@ void HomePage::addCustomWidget()
 
     ui->scrollArea->setWidgetResizable(true);
     ui->scrollArea->setWidget(ui->scrollAreaWidgetContents);
+}
+
+
+
+void HomePage::on_prescription_inquiry_clicked()
+{
+
+    this->hide();
+    prescription_inquiry->show();
+}
+
+void HomePage::on_PreToHome_Received()
+{
+    this->show();
+    prescription_inquiry->close();
+
 }

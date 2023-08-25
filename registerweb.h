@@ -24,18 +24,18 @@ public:
     void paintEvent(QPaintEvent*);
      HomePage* homePage;
      SignUp* signUp;
+
 public slots:
      void on_exit_Signal_Received();
      void handleMessageBoxFinished(int result);
-      void showMessageBox();
+     void showMessageBox();
 
 
 private:
-    Ui::RegisterWeb *ui;
-    void login();
-     QMessageBox* messageBox;
+    Ui::RegisterWeb *ui; 
+
+    QMessageBox* messageBox;
      QSqlDatabase myDB;
-
-
+     void login();
 };
 #endif // REGISTERWEB_H

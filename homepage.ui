@@ -27,7 +27,7 @@
       <enum>QTabWidget::South</enum>
      </property>
      <property name="currentIndex">
-      <number>2</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="HOME">
       <attribute name="title">
@@ -50,7 +50,7 @@
        </property>
        <layout class="QHBoxLayout" name="horizontalLayout">
         <item>
-         <widget class="QPushButton" name="pushButton">
+         <widget class="QPushButton" name="booking">
           <property name="styleSheet">
            <string notr="true">border-radius: 50px;
     background: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 #0099FF, stop:1 #0044CC);
@@ -63,7 +63,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="prescription_inquiry">
           <property name="styleSheet">
            <string notr="true">border-radius: 50px;
     background: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 #0099FF, stop:1 #0044CC);
@@ -76,7 +76,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_3">
+         <widget class="QPushButton" name="medica_record">
           <property name="styleSheet">
            <string notr="true">border-radius: 50px;
     background: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 #0099FF, stop:1 #0044CC);
@@ -89,7 +89,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_4">
+         <widget class="QPushButton" name="health_evaluate">
           <property name="styleSheet">
            <string notr="true">border-radius: 50px;
     background: qradialgradient(cx:0.5, cy:0.5, radius: 1, fx:0.5, fy:0.5, stop:0 #0099FF, stop:1 #0044CC);
@@ -139,7 +139,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton_5">
+        <widget class="QPushButton" name="updatePushbutton">
          <property name="text">
           <string>update</string>
          </property>

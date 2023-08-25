@@ -15,6 +15,7 @@ public:
     explicit navigationDesign(QWidget *parent = nullptr);
     ~navigationDesign();
 
+
 private:
     Ui::navigationDesign *ui;
 };
