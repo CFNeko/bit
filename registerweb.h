@@ -2,11 +2,14 @@
 #define REGISTERWEB_H
 
 #include <QMainWindow>
+#include"homepage.h"
+#include"signup.h"
+#include<QMessageBox>
+#include <QMainWindow>
 #include <QtDebug>
 #include <QtSql>
 #include <QFileInfo>
 
-#include"homepage.h"
 QT_BEGIN_NAMESPACE
 namespace Ui { class RegisterWeb; }
 QT_END_NAMESPACE
@@ -20,11 +23,19 @@ public:
     ~RegisterWeb();
     void paintEvent(QPaintEvent*);
      HomePage* homePage;
+     SignUp* signUp;
+public slots:
+     void on_exit_Signal_Received();
+     void handleMessageBoxFinished(int result);
+      void showMessageBox();
+
+
 private:
     Ui::RegisterWeb *ui;
     void login();
+     QMessageBox* messageBox;
+     QSqlDatabase myDB;
 
-    QSqlDatabase myDB;
 
 };
 #endif // REGISTERWEB_H

@@ -47,6 +47,7 @@ public:
         QPushButton *CancelBtn;
         QHBoxLayout *BtnLayout;
 
+        void paintEvent(QPaintEvent *);
 private:
     Ui::HomePage *ui;
     ListTemplate* m_pListTemplate;
