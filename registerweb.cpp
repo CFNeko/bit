@@ -13,7 +13,7 @@
 #include <QDebug>
 #include <QSqlQuery>
 
-#define Path_to_DB "/home/user/Desktop/registerWeb/Linux"
+#define Path_to_DB "/home/user/Qtworks/mainWindow/2/database.db"
 
 RegisterWeb::RegisterWeb(QWidget *parent)
     : QMainWindow(parent)
@@ -22,6 +22,18 @@ RegisterWeb::RegisterWeb(QWidget *parent)
     ui->setupUi(this);
     homePage = new HomePage();
     signUp = new SignUp();
+    //db
+    myDB = QSqlDatabase::addDatabase("QSQLITE");
+        myDB.setDatabaseName(Path_to_DB);
+        QFileInfo checkFile(Path_to_DB);
+        if (myDB.open()) {
+                qDebug() << "DB online";
+        }
+        else {
+                qDebug("DB no online :(");
+                QMessageBox::warning(this, "error", myDB.lastError().text());
+        }
+
     //1.添加资源文件
 
    //2.指定窗口大小--固定大小
@@ -64,8 +76,6 @@ RegisterWeb::RegisterWeb(QWidget *parent)
            QPushButton *loginButton = new QPushButton("Login");
            QPushButton *registerButton = new QPushButton("Register");
 
-#define Path_to_DB "/home/user/Desktop/registerWeb/Linux"
-
            connect(registerButton, &QPushButton::clicked,
                    [=](){
 
@@ -77,13 +87,13 @@ RegisterWeb::RegisterWeb(QWidget *parent)
            connect(loginButton, &QPushButton::clicked,
                             [=](){
 
-                        QString str = usernameLineEdit->text();
-                        QString password = passwordLineEdit->text();
-                       QString temp = "SELECT * FROM login WHERE username= '" + str + "' and password='" + password + "'";
-                        myDB.open();
-                        QSqlQuery q;
-                        QString data = "";
-                        q.exec(temp);
+                       QString str = usernameLineEdit->text();
+                       QString password = passwordLineEdit->text();
+                       QString temp = "SELECT * FROM patient WHERE name= '" + str + "' and password='" + password + "'";
+                       myDB.open();
+                       QSqlQuery q;
+                       QString data = "";
+                       q.exec(temp);
                         while (q.next()) {
                             data += q.value(0).toString() + q.value(1).toString();
                         }
@@ -92,9 +102,12 @@ RegisterWeb::RegisterWeb(QWidget *parent)
                             this->hide();
                             homePage->show();
                        }
-
-
-                    });
+                        else {
+                            //Jenny 请假一个错误widget
+                            passwordLineEdit->setText("");
+                            showMessageBox();
+                        }
+                         });
            QHBoxLayout* horizontalLayout = new QHBoxLayout; // 创建水平布局
            horizontalLayout->addWidget(registerButton); // 将按键1添加到水平布局
            horizontalLayout->addWidget(loginButton); // 将按键2添加到水平布局
@@ -123,7 +136,7 @@ RegisterWeb::RegisterWeb(QWidget *parent)
            setCentralWidget(centralWidget);
 
            connect(signUp, SIGNAL(signalToMain()), this, SLOT(on_exit_Signal_Received()) );
-              connect(signUp, SIGNAL(signalTologin()), this, SLOT(on_exit_Signal_Received()) );
+           connect(signUp, SIGNAL(signalTologin()), this, SLOT(on_exit_Signal_Received()) );
 }
 
 RegisterWeb::~RegisterWeb()
@@ -176,7 +189,7 @@ void RegisterWeb::showMessageBox()
             {
                 messageBox = new QMessageBox(this);
                 messageBox->setWindowTitle("提示"); // 设置标题文字
-                messageBox->setText("您两次输入的密码不一致，请重试！");
+                messageBox->setText("用户名不存在或者密码错误！");
                 messageBox->setStandardButtons(QMessageBox::Ok);
                 connect(messageBox, &QMessageBox::finished, this, &RegisterWeb::handleMessageBoxFinished);
                 messageBox->show();

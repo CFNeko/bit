@@ -2,6 +2,13 @@
 #include "ui_signup.h"
 #include<QPainter>
 #include<QDebug>
+#include <QDebug>
+#include <QSqlQuery>
+#include<QFileInfo>
+#include <QString>
+
+#define Path_to_DB "/home/user/Qtworks/mainWindow/2/database.db"
+
 
 SignUp::SignUp(QWidget *parent) :
     QWidget(parent),
@@ -17,10 +24,40 @@ SignUp::SignUp(QWidget *parent) :
 
     //4.设置窗口标题
     this->setWindowTitle("registerWeb");
-
+//QString x = ui->boxPassword->text();
+//QString y = ui->boxPassword2->text();
 
     connect(ui->button_exit,&QPushButton::clicked,this,&SignUp::on_pushButton_exit_clicked);
-    connect(ui->pushButton_register,&QPushButton::clicked,this,&SignUp::on_pushButton_register_clicked);
+    connect(ui->pushButton_register,&QPushButton::clicked,
+            [=](){
+       myDBregister = QSqlDatabase::addDatabase("QSQLITE", "Register");
+       QFileInfo checkFile(Path_to_DB);
+       QString username = ui->boxUsername->text();
+       QString gender = ui->boxGender->currentText();
+       QString id = ui->boxID->text();
+       QString password = ui->boxPassword->text();
+       QString password_2 = ui->boxPassword2->text();
+       if(password!=password_2){
+          showMessageBox();
+          return;
+
+       }
+       QString temp = "INSERT INTO patient (name, gender, idcard, password) VALUES('" + username + "', '" + gender + "', '" + id + "', '" + password + "')" ;
+       qDebug() << temp;
+       myDBregister.open();
+       QSqlQuery q;
+       q.exec(temp);
+
+       //初始化掉注册界面
+       ui->boxUsername->setText("");
+       ui->boxGender->setCurrentIndex(0);
+       ui->boxID->setText("");
+       ui->boxPassword->setText("");
+       ui->boxPassword2->setText("");
+
+       showFailMessageBox();
+    });
+
 }
 
 SignUp::~SignUp()
@@ -48,16 +85,7 @@ void SignUp::on_pushButton_exit_clicked()
 
 }
 
-void SignUp::on_pushButton_register_clicked()
-{
-    //如果信息正确，存储信息到数据库
-    //传输信号给登录页面
-    // emit signalTologin();
 
-    //如果密码不正确，弹出提示框，并重新输入
-     showMessageBox();
-
-}
 
 void SignUp::handleMessageBoxFinished(int result)
 {
@@ -78,5 +106,30 @@ void SignUp::showMessageBox()
                 messageBox->setStandardButtons(QMessageBox::Ok);
                 connect(messageBox, &QMessageBox::finished, this, &SignUp::handleMessageBoxFinished);
                 messageBox->show();
+            }
+}
+void SignUp::showFailMessageBox()
+{
+    if (messageBox == nullptr)
+            {
+                messageBox = new QMessageBox(this);
+                messageBox->setWindowTitle("提示"); // 设置标题文字
+                messageBox->setText("恭喜您注册成功！");
+                messageBox->setStandardButtons(QMessageBox::Ok);
+                connect(messageBox, &QMessageBox::finished, this, &SignUp::handleMessageBoxFinished);
+                messageBox->show();
+
+                emit signalTologin();
+            }
+}
+
+
+void SignUp::handleMessageFailBoxFinished(int result)
+{
+    if (messageBox != nullptr)
+            {
+
+                messageBox->deleteLater();
+                messageBox = nullptr;
             }
 }
