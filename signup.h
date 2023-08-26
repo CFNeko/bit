@@ -18,6 +18,7 @@ public:
     ~SignUp();
 
     void paintEvent(QPaintEvent *);
+    void showSuccessMessageBox();
 private slots:
     void on_pushButton_exit_clicked();
 
