@@ -43,7 +43,6 @@ SignUp::SignUp(QWidget *parent) :
 
        }
        QString temp = "INSERT INTO patient (name, gender, idcard, password) VALUES('" + username + "', '" + gender + "', '" + id + "', '" + password + "')" ;
-       qDebug() << temp;
        myDBregister.open();
        QSqlQuery q;
        q.exec(temp);
