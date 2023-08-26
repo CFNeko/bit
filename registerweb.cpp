@@ -12,8 +12,10 @@
 #include<QRadioButton>
 #include <QDebug>
 #include <QSqlQuery>
+#include<QButtonGroup>
 
-#define Path_to_DB "/home/user/Desktop/bit/database.db"
+
+#define Path_to_DB "/home/user/Qtworks/mainWindow/2/database.db"
 
 RegisterWeb::RegisterWeb(QWidget *parent)
     : QMainWindow(parent)
@@ -76,6 +78,17 @@ RegisterWeb::RegisterWeb(QWidget *parent)
            QPushButton *loginButton = new QPushButton("Login");
            QPushButton *registerButton = new QPushButton("Register");
 
+          // pushButton_patient->move(100,350);
+          // pushButton_doctor->move(250,350);
+
+
+
+
+          //    connect(pushButton_patient,&QPushButton::pressed,this,&RegisterWeb::on_click
+
+
+
+
            connect(registerButton, &QPushButton::clicked,
                    [=](){
 
@@ -111,6 +124,8 @@ RegisterWeb::RegisterWeb(QWidget *parent)
            QHBoxLayout* horizontalLayout = new QHBoxLayout; // 创建水平布局
            horizontalLayout->addWidget(registerButton); // 将按键1添加到水平布局
            horizontalLayout->addWidget(loginButton); // 将按键2添加到水平布局
+
+
           // 创建右侧布局，并将用户名、密码和登录按钮添加到布局中
            QVBoxLayout *rightLayout = new QVBoxLayout;
            rightLayout->setContentsMargins(500, 100, 50, 100);
@@ -134,6 +149,56 @@ RegisterWeb::RegisterWeb(QWidget *parent)
            QWidget *centralWidget = new QWidget;
            centralWidget->setLayout(mainLayout);
            setCentralWidget(centralWidget);
+
+
+           // 创建两个单选按钮
+        QRadioButton* pushButton_patient = new QRadioButton("Patient",centralWidget);
+        QRadioButton* pushButton_doctor = new QRadioButton("Doctor",centralWidget);
+
+        pushButton_patient->setStyleSheet(
+                    "QRadioButton {"
+                                                    "    background-color: rgba(255, 255, 255, 0.5);"  // 半透明的白色背景
+                                                    "    color: #000000;"
+                                                    "    border: none;"
+                                                    "    border-radius: 5px;"
+                                                    "    padding: 5px;"
+                                                    "}"
+                                                    "QRadioButton::indicator {"
+                                                    "    width: 16px;"
+                                                    "    height: 16px;"
+                                                    "}"
+                                                    "QRadioButton::indicator:checked {"
+                                                    "    background-color: #0000ff;"  // RGB(13, 175, 216)背景
+                                                    "}"
+                    );
+        pushButton_doctor->setStyleSheet(
+                    "QRadioButton {"
+                                                    "    background-color: rgba(255, 255, 255, 0.5);"  // 半透明的白色背景
+                                                    "    color: #000000;"
+                                                    "    border: none;"
+                                                    "    border-radius: 5px;"
+                                                    "    padding: 5px;"
+                                                    "}"
+                                                    "QRadioButton::indicator {"
+                                                    "    width: 16px;"
+                                                    "    height: 16px;"
+                                                    "}"
+                                                    "QRadioButton::indicator:checked {"
+                                                    "    background-color: #0000ff;"  // RGB(13, 175, 216)背景
+                                                    "}"
+                    );
+
+           // 创建按钮组，并将单选按钮添加到组中
+           QButtonGroup radiobuttonGroup;
+           radiobuttonGroup.addButton(pushButton_patient);
+           radiobuttonGroup.addButton(pushButton_doctor);
+           // 设置按钮组为互斥的，即只能选择一个选项
+           radiobuttonGroup.setExclusive(true);
+
+
+           // 将单选按钮添加到布局中
+           pushButton_patient->move(100,400);
+           pushButton_doctor->move(300,400);
 
            connect(signUp, SIGNAL(signalToMain()), this, SLOT(on_exit_Signal_Received()) );
            connect(signUp, SIGNAL(signalTologin()), this, SLOT(on_exit_Signal_Received()) );
