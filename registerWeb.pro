@@ -20,6 +20,7 @@ SOURCES += \
     homepage.cpp \
     main.cpp \
     navigationdesign.cpp \
+    prescriptioninquiry.cpp \
     registerweb.cpp \
     signup.cpp
 
@@ -27,6 +28,7 @@ HEADERS += \
     booking.h \
     homepage.h \
     navigationdesign.h \
+    prescriptioninquiry.h \
     registerweb.h \
     signup.h
 
@@ -36,6 +38,7 @@ FORMS += \
     listtemplate.ui \
     msgitem.ui \
     navigationdesign.ui \
+    prescriptioninquiry.ui \
     registerweb.ui \
     signup.ui
 

@@ -7,6 +7,7 @@
 #include<QLineEdit>
 #include<QComboBox>
 #include<QTextEdit>
+#include"prescriptioninquiry.h"
 
 namespace Ui {
 class HomePage;
@@ -42,15 +43,25 @@ public:
         QTextEdit *IntroductionText;
         QVBoxLayout *RightLayout;
 
+
         //底部部分
         QPushButton *OKBtn;
         QPushButton *CancelBtn;
         QHBoxLayout *BtnLayout;
 
         void paintEvent(QPaintEvent *);
+
+
+
+private slots:
+        void on_prescription_inquiry_clicked();
+        void on_PreToHome_Received();
+
 private:
     Ui::HomePage *ui;
     ListTemplate* m_pListTemplate;
+     PrescriptionInquiry* prescription_inquiry;
+
 };
 
 #endif // HOMEPAGE_H
