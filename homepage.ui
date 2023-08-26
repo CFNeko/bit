@@ -27,7 +27,7 @@
       <enum>QTabWidget::South</enum>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="HOME">
       <attribute name="title">
@@ -123,9 +123,9 @@
        </property>
       </widget>
      </widget>
-     <widget class="QWidget" name="Massage">
+     <widget class="QWidget" name="Message">
       <attribute name="title">
-       <string>Massage</string>
+       <string>Message</string>
       </attribute>
       <layout class="QVBoxLayout" name="verticalLayout">
        <item>
@@ -201,42 +201,6 @@
                </property>
               </widget>
              </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_7">
-               <property name="maximumSize">
-                <size>
-                 <width>224</width>
-                 <height>37</height>
-                </size>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">border-radius: 10px;
-background-color: #F0F0F0;
-                        border: 2px solid #C0C0C0;
-                        padding: 5px;
-                        
-</string>
-               </property>
-               <property name="text">
-                <string>修改资料</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="pushButton_8">
-               <property name="styleSheet">
-                <string notr="true">border-radius: 10px;
-background-color: #F0F0F0;
-                        border: 2px solid #C0C0C0;
-                        padding: 5px;
-                        
-</string>
-               </property>
-               <property name="text">
-                <string>提交</string>
-               </property>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>
@@ -280,32 +244,32 @@ background-color: #F0F0F0;
                <item>
                 <widget class="QLabel" name="label_12">
                  <property name="text">
-                  <string>telephone</string>
+                  <string>电话号码</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_10"/>
+                <widget class="QLineEdit" name="boxTelephone"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_13">
                  <property name="text">
-                  <string>address</string>
+                  <string>地址</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_11"/>
+                <widget class="QLineEdit" name="boxAddress"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_14">
                  <property name="text">
-                  <string>emali</string>
+                  <string>电子邮件</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_12"/>
+                <widget class="QLineEdit" name="boxEmail"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_15">
@@ -360,7 +324,7 @@ background-color: #F0F0F0;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_2"/>
+                <widget class="QLineEdit" name="boxName"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_8">
@@ -370,7 +334,7 @@ background-color: #F0F0F0;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_9"/>
+                <widget class="QLineEdit" name="boxAge"/>
                </item>
                <item>
                 <widget class="QLabel" name="label_9">
@@ -380,27 +344,44 @@ background-color: #F0F0F0;
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_6"/>
+                <widget class="QLineEdit" name="boxID"/>
                </item>
                <item>
-                <widget class="QLabel" name="label_10">
+                <widget class="QLabel" name="label_2">
                  <property name="text">
-                  <string>修改密码：</string>
+                  <string/>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_7"/>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_11">
+                <widget class="QPushButton" name="pushButton_7">
+                 <property name="styleSheet">
+                  <string notr="true">border-radius: 10px;
+background-color: #F0F0F0;
+                        border: 2px solid #C0C0C0;
+                        padding: 5px;
+                        
+</string>
+                 </property>
                  <property name="text">
-                  <string>确认密码：</string>
+                  <string>修改资料</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="QLineEdit" name="lineEdit_8"/>
+                <widget class="QPushButton" name="pushButton_8">
+                 <property name="styleSheet">
+                  <string notr="true">border-radius: 10px;
+background-color: #F0F0F0;
+                        border: 2px solid #C0C0C0;
+                        padding: 5px;
+                        
+</string>
+                 </property>
+                 <property name="text">
+                  <string>提交</string>
+                 </property>
+                </widget>
                </item>
               </layout>
              </widget>

@@ -4,6 +4,9 @@
 #include<QTextEdit>
 #include<QDebug>
 #include<QPainter>
+#include <QSqlQuery>
+
+#define Path_to_DB "/home/user/Desktop/bit/database.db"
 
 HomePage::HomePage(QWidget *parent) :
     QWidget(parent),
@@ -28,8 +31,17 @@ HomePage::HomePage(QWidget *parent) :
     QVBoxLayout* layout = new QVBoxLayout(ui->scrollAreaWidgetContents); // 创建垂直布局
        layout->setSpacing(10); // 设置布局的间距
 
+      //Erick DB
+      myDBChangeInfo = QSqlDatabase::addDatabase("QSQLITE", "Change info");
+      myDBChangeInfo.setDatabaseName(Path_to_DB);
+      QString temp = "SELECT ";
+      myDBChangeInfo.open();
+      QSqlQuery q;
+      QString data = "";
+      q.exec(temp);
+
       connect(ui->updatePushbutton, &QPushButton::clicked, this, &HomePage::addCustomWidget); // 点击 "Update" 按钮时添加自定义界面
-       connect(ui->prescription_inquiry, &QPushButton::clicked, this, &HomePage::on_prescription_inquiry_clicked);
+      connect(ui->prescription_inquiry, &QPushButton::clicked, this, &HomePage::on_prescription_inquiry_clicked);
       setWindowTitle("患者端主页");
 
       // 创建水平布局管理器

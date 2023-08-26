@@ -7,7 +7,7 @@
 #include<QFileInfo>
 #include <QString>
 
-#define Path_to_DB "/home/user/Desktop/bit/database.db"
+#define Path_to_DB "/home/user/Qtworks/mainWindow/2/database.db"
 
 
 SignUp::SignUp(QWidget *parent) :

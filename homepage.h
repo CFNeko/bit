@@ -8,6 +8,7 @@
 #include<QComboBox>
 #include<QTextEdit>
 #include"prescriptioninquiry.h"
+#include <QSqlDatabase>
 
 namespace Ui {
 class HomePage;
@@ -61,6 +62,7 @@ private:
     Ui::HomePage *ui;
     ListTemplate* m_pListTemplate;
      PrescriptionInquiry* prescription_inquiry;
+    QSqlDatabase myDBChangeInfo;
 
 };
 
