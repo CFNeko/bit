@@ -34,11 +34,20 @@ HomePage::HomePage(QWidget *parent) :
       //Erick DB
       myDBChangeInfo = QSqlDatabase::addDatabase("QSQLITE", "Change info");
       myDBChangeInfo.setDatabaseName(Path_to_DB);
-      QString temp = "SELECT ";
+      QString deleteLater = "23";
+      QString temp = "select phone, address, email, name, age, idcard FROM patient WHERE pno='" + deleteLater + "'";
+      qDebug() << temp;
       myDBChangeInfo.open();
       QSqlQuery q;
-      QString data = "";
       q.exec(temp);
+      qDebug() << q.value(0).toString();
+      ui->boxTelephone->setText(q.value(0).toString());
+      ui->boxAddress->setText(q.value(1).toString());
+      ui->boxEmail->setText(q.value(2).toString());
+      ui->boxName->setText(q.value(3).toString());
+      ui->boxAge->setText(q.value(4).toString());
+      ui->boxID->setText(q.value(5).toString());
+
 
       connect(ui->updatePushbutton, &QPushButton::clicked, this, &HomePage::addCustomWidget); // 点击 "Update" 按钮时添加自定义界面
       connect(ui->prescription_inquiry, &QPushButton::clicked, this, &HomePage::on_prescription_inquiry_clicked);
