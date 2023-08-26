@@ -53,6 +53,3 @@ RESOURCES += \
 
 DISTFILES += \
     resource111/logo.jpg
-
-SUBDIRS += \
-    uidemo08/uidemo08.pro

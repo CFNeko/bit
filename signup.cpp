@@ -7,7 +7,7 @@
 #include<QFileInfo>
 #include <QString>
 
-#define Path_to_DB "/home/user/Qtworks/mainWindow/2/database.db"
+#define Path_to_DB "/home/user/Desktop/bit/database.db"
 
 
 SignUp::SignUp(QWidget *parent) :
@@ -46,9 +46,6 @@ SignUp::SignUp(QWidget *parent) :
        myDBregister.open();
        QSqlQuery q;
        q.exec(temp);
-      // if(username.isEmpty()||gender.isEmpty()||id.isEmpty()||password.isEmpty()||password_2.isEmpty()){
-       //    show
-       //}
 
        //初始化掉注册界面
        ui->boxUsername->setText("");
@@ -122,20 +119,6 @@ void SignUp::showFailMessageBox()
                 messageBox->show();
 
                 emit signalTologin();
-            }
-}
-
-void SignUp::showSuccessMessageBox()
-{
-    if (messageBox == nullptr)
-            {
-                messageBox = new QMessageBox(this);
-                messageBox->setWindowTitle("提示"); // 设置标题文字
-                messageBox->setText("请完整输入信息！");
-                messageBox->setStandardButtons(QMessageBox::Ok);
-                connect(messageBox, &QMessageBox::finished, this, &SignUp::handleMessageBoxFinished);
-                messageBox->show();
-
             }
 }
 
