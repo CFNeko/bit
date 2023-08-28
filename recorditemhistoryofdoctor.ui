@@ -2,8 +2,8 @@
  <author/>
  <comment/>
  <exportmacro/>
- <class>RecordItemPage</class>
- <widget class="QWidget" name="RecordItemPage">
+ <class>RecordItemHistoryofDoctor</class>
+ <widget name="RecordItemHistoryofDoctor" class="QWidget">
   <property name="geometry">
    <rect>
     <x>0</x>

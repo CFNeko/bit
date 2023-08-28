@@ -27,7 +27,6 @@ HomePage::HomePage(QWidget *parent) :
     ui->prescription_inquiry->setFixedSize(100,100);
     ui->medica_record->setFixedSize(100,100);
     ui->health_evaluate->setFixedSize(100,100);
-    prescription_inquiry = new PrescriptionInquiry;
     QVBoxLayout* layout = new QVBoxLayout(ui->scrollAreaWidgetContents); // 创建垂直布局
        layout->setSpacing(10); // 设置布局的间距
 
@@ -73,7 +72,7 @@ HomePage::HomePage(QWidget *parent) :
 
       ui->frame_5->setLayout(mainlayout);
       //实现从处方查询那个界面，跳回到首页
-       connect(prescription_inquiry, SIGNAL(preToHome()), this, SLOT(on_PreToHome_Received()) );
+//       connect(prescription_inquiry, SIGNAL(preToHome()), this, SLOT(on_PreToHome_Received()) );
 
 }
 
@@ -89,10 +88,6 @@ void HomePage::paintEvent(QPaintEvent*)
     QPixmap pixmap1;
     pixmap1.load(":/resource111/background.jpg");
     painter1.drawPixmap(0,0,this->width(),this->height(),pixmap1);
-
-
-
-
 }
 
 
@@ -114,12 +109,12 @@ void HomePage::on_prescription_inquiry_clicked()
 {
 
     this->hide();
-    prescription_inquiry->show();
+//    prescription_inquiry->show();
 }
 
 void HomePage::on_PreToHome_Received()
 {
     this->show();
-    prescription_inquiry->close();
+//    prescription_inquiry->close();
 
 }

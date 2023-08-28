@@ -1,4 +1,4 @@
-#include "prescriptionpage.h"
+include "prescriptionpage.h"
 #include "ui_prescriptionpage.h"
 
 PrescriptionPage::PrescriptionPage(QWidget *parent, int dno, int pno, int rgno) :

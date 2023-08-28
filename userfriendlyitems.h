@@ -84,4 +84,24 @@ private:
     QStackedWidget *stackedWidget;
 };
 
+
+
+
+
+//挂号界面的按钮
+class RegistrationButton : public QPushButton
+{
+public:
+    explicit RegistrationButton(QWidget *parent = nullptr);
+    ~RegistrationButton() {};
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
+
+protected:
+    void paintEvent(QPaintEvent *event) override;
+
+private:
+    void animateClick();
+};
+
 #endif // USERFRIENDLYITEMS_H

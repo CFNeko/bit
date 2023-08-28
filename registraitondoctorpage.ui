@@ -2,8 +2,8 @@
  <author/>
  <comment/>
  <exportmacro/>
- <class>PrescriptionPage</class>
- <widget class="QWidget" name="PrescriptionPage">
+ <class>RegistraitonDoctorPage</class>
+ <widget name="RegistraitonDoctorPage" class="QWidget">
   <property name="geometry">
    <rect>
     <x>0</x>

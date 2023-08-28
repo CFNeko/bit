@@ -2,8 +2,6 @@
 #define REGISTRATIONPAGE_H
 
 #include "userfriendlyitems.h"
-#include "recorditempage.h"
-#include "recorditempage.h"
 #include <QWidget>
 #include <QFrame>
 #include <QTableWidget>

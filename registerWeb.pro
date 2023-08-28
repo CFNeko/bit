@@ -17,30 +17,51 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     booking.cpp \
+    doctorpage.cpp \
+    healthevaluation.cpp \
     homepage.cpp \
     main.cpp \
     navigationdesign.cpp \
-    prescriptioninquiry.cpp \
+    prescriptiontable.cpp \
+    recorditemhistoryofdoctor.cpp \
+    recorditemtable.cpp \
     registerweb.cpp \
-    signup.cpp
+    registraitondoctorpage.cpp \
+    registrationpage.cpp \
+    signup.cpp \
+    userfriendlyitems.cpp
 
 HEADERS += \
     booking.h \
+    doctorpage.h \
+    healthevaluation.h \
     homepage.h \
     navigationdesign.h \
-    prescriptioninquiry.h \
+    prescriptiontable.h \
+    recorditemhistoryofdoctor.h \
+    recorditemtable.h \
     registerweb.h \
-    signup.h
+    registraitondoctorpage.h \
+    registrationpage.h \
+    signup.h \
+    userfriendlyitems.h
 
 FORMS += \
     booking.ui \
+    doctorpage.ui \
+    healthevaluation.ui \
     homepage.ui \
     listtemplate.ui \
     msgitem.ui \
     navigationdesign.ui \
-    prescriptioninquiry.ui \
+    prescriptiontable.ui \
+    recorditemhistoryofdoctor.ui \
+    recorditemtable.ui \
     registerweb.ui \
-    signup.ui
+    registraitondoctorpage.ui \
+    registrationpage.ui \
+    signup.ui \
+    userfriendlyitems.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

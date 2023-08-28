@@ -7,5 +7,7 @@
         <file>resource111/2.png</file>
         <file>resource111/1.png</file>
         <file>resource111/background.jpg</file>
+        <file>resource111/red.png</file>
+        <file>resource111/evaluation.png</file>
     </qresource>
 </RCC>
