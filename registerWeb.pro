@@ -17,60 +17,30 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     booking.cpp \
-    doctorpage.cpp \
-    healthevaluation.cpp \
     homepage.cpp \
     main.cpp \
     navigationdesign.cpp \
     prescriptioninquiry.cpp \
-    prescriptionpage.cpp \
-    prescriptiontable.cpp \
-    recorditemhistoryofdoctor.cpp \
-    recorditempage.cpp \
-    recorditemtable.cpp \
     registerweb.cpp \
-    registraitondoctorpage.cpp \
-    registrationpage.cpp \
-    signup.cpp \
-    userfriendlyitems.cpp
+    signup.cpp
 
 HEADERS += \
     booking.h \
-    doctorpage.h \
-    healthevaluation.h \
     homepage.h \
     navigationdesign.h \
     prescriptioninquiry.h \
-    prescriptionpage.h \
-    prescriptiontable.h \
-    recorditemhistoryofdoctor.h \
-    recorditempage.h \
-    recorditemtable.h \
     registerweb.h \
-    registraitondoctorpage.h \
-    registrationpage.h \
-    signup.h \
-    userfriendlyitems.h
+    signup.h
 
 FORMS += \
     booking.ui \
-    doctorpage.ui \
-    healthevaluation.ui \
     homepage.ui \
     listtemplate.ui \
     msgitem.ui \
     navigationdesign.ui \
     prescriptioninquiry.ui \
-    prescriptionpage.ui \
-    prescriptiontable.ui \
-    recorditemhistoryofdoctor.ui \
-    recorditempage.ui \
-    recorditemtable.ui \
     registerweb.ui \
-    registraitondoctorpage.ui \
-    registrationpage.ui \
-    signup.ui \
-    userfriendlyitems.ui
+    signup.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -83,3 +53,6 @@ RESOURCES += \
 
 DISTFILES += \
     resource111/logo.jpg
+
+SUBDIRS += \
+    uidemo08/uidemo08.pro
