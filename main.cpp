@@ -1,11 +1,6 @@
-#include "mainwindow.h"
-#include "doctorpage.h"
-#include "recorditempage.h"
+#include "registerweb.h"
 
 #include <QApplication>
-#include <QtSql>
-#include <QMessageBox>
-#include <QDebug>
 
 int main(int argc, char *argv[])
 {
@@ -19,10 +14,12 @@ int main(int argc, char *argv[])
 //    MainWindow w;
 //    w.show();
 
-    DoctorPage *d = new DoctorPage;
-    d->show();
+//    DoctorPage *d = new DoctorPage;
+//    d->show();
 
 //    RecordItemPage *r = new RecordItemPage;
 //    r->show();
+    RegisterWeb w;
+    w.show();
     return a.exec();
 }
