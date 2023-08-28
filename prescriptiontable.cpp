@@ -1,6 +1,7 @@
 #include "prescriptiontable.h"
 #include "ui_prescriptiontable.h"
 
+
 PrescriptionTable::PrescriptionTable(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::PrescriptionTable)

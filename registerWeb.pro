@@ -25,10 +25,8 @@ SOURCES += \
     prescriptioninquiry.cpp \
     prescriptionpage.cpp \
     prescriptiontable.cpp \
-    recorditemhistory.cpp \
     recorditemhistoryofdoctor.cpp \
     recorditempage.cpp \
-    recorditemsquery.cpp \
     recorditemtable.cpp \
     registerweb.cpp \
     registraitondoctorpage.cpp \
@@ -45,10 +43,8 @@ HEADERS += \
     prescriptioninquiry.h \
     prescriptionpage.h \
     prescriptiontable.h \
-    recorditemhistory.h \
     recorditemhistoryofdoctor.h \
     recorditempage.h \
-    recorditemsquery.h \
     recorditemtable.h \
     registerweb.h \
     registraitondoctorpage.h \
@@ -67,10 +63,8 @@ FORMS += \
     prescriptioninquiry.ui \
     prescriptionpage.ui \
     prescriptiontable.ui \
-    recorditemhistory.ui \
     recorditemhistoryofdoctor.ui \
     recorditempage.ui \
-    recorditemsquery.ui \
     recorditemtable.ui \
     registerweb.ui \
     registraitondoctorpage.ui \

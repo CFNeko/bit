@@ -19,10 +19,10 @@ int main(int argc, char *argv[])
 //    MainWindow w;
 //    w.show();
 
-//    DoctorPage *d = new DoctorPage;
-//    d->show();
+    DoctorPage *d = new DoctorPage;
+    d->show();
 
-    RecordItemPage *r = new RecordItemPage;
-    r->show();
+//    RecordItemPage *r = new RecordItemPage;
+//    r->show();
     return a.exec();
 }
