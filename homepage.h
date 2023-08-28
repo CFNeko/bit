@@ -8,7 +8,6 @@
 #include<QComboBox>
 #include<QTextEdit>
 #include"prescriptioninquiry.h"
-#include <QSqlDatabase>
 
 namespace Ui {
 class HomePage;
@@ -58,11 +57,14 @@ private slots:
         void on_prescription_inquiry_clicked();
         void on_PreToHome_Received();
 
+        void on_pushButton_modify_clicked();
+
+        void on_pushButton_submit_clicked();
+
 private:
     Ui::HomePage *ui;
     ListTemplate* m_pListTemplate;
      PrescriptionInquiry* prescription_inquiry;
-    QSqlDatabase myDBChangeInfo;
 
 };
 
